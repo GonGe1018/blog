@@ -8,8 +8,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "채호야 놀자",
-	subtitle: "",
+	title: "Chaeho Yu",
+	subtitle: "채호야 놀자",
 	lang: "ko", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 300, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -30,12 +30,29 @@ export const siteConfig: SiteConfig = {
 		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
 	},
 	favicon: [
-		// Leave this array empty to use the default favicon
-		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-		// }
+		{
+			src: '/favicon/favicon.ico',
+			sizes: '32x32',
+		},
+		{
+			src: '/favicon/favicon.svg',
+		},
+		{
+			src: '/favicon/favicon-96x96.png',
+			sizes: '96x96',
+		},
+		{
+			src: '/favicon/apple-touch-icon.png',
+			sizes: '180x180',
+		},
+		{
+			src: '/favicon/web-app-manifest-192x192.png',
+			sizes: '192x192',
+		},
+		{
+			src: '/favicon/web-app-manifest-512x512.png',
+			sizes: '512x512',
+		},
 	],
 };
 
