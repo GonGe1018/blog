@@ -19,7 +19,7 @@ const len = page.data.length;
 
 // 메인 페이지 제목 설정
 const isFirstPage = page.currentPage === 1;
-const pageTitle = isFirstPage ? siteConfig.title : `${siteConfig.title} - 페이지 ${page.currentPage}`;
+const pageTitle = isFirstPage ? undefined : `페이지 ${page.currentPage}`;
 ---
 
 <MainGridLayout title={pageTitle}>
