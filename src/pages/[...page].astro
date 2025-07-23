@@ -5,6 +5,7 @@ import PostPage from "../components/PostPage.astro";
 import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
+import { siteConfig } from "../config";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allBlogPosts = await getSortedPosts();
@@ -15,9 +16,29 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 
 const len = page.data.length;
+
+// 메인 페이지 제목 설정
+const isFirstPage = page.currentPage === 1;
+const pageTitle = isFirstPage ? siteConfig.title : `${siteConfig.title} - 페이지 ${page.currentPage}`;
 ---
 
-<MainGridLayout>
+<MainGridLayout title={pageTitle}>
+    <!-- 메인 페이지 헤더 -->
+    {isFirstPage && (
+        <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-6">
+            <div class="card-base z-10 px-9 py-6 relative w-full">
+                <h1 class="text-3xl md:text-4xl font-bold text-[var(--primary)] mb-2 onload-animation">
+                    {siteConfig.title}
+                </h1>
+                {siteConfig.subtitle && (
+                    <p class="text-lg text-neutral-600 dark:text-neutral-300 onload-animation" style="animation-delay: 100ms;">
+                        선린인터넷고등학교의 평범한 학생, 유채호가 운영하는 블로그입니다.
+                    </p>
+                )}
+            </div>
+        </div>
+    )}
+
     <PostPage page={page}></PostPage>
     <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
 </MainGridLayout>
