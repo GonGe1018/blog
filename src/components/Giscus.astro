@@ -2,7 +2,7 @@
 // Giscus 댓글 시스템 컴포넌트
 ---
 
-<div class="giscus-container mt-8 mb-8">
+<div class="giscus-container mt-8 mb-8" id="giscus-container">
     <script src="https://giscus.app/client.js"
         data-repo="GonGe1018/blog"
         data-repo-id="R_kgDOPReDQQ"
@@ -13,13 +13,49 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
-        data-theme="transparent_dark"
+        data-theme="dark"
         data-lang="ko"
         data-loading="lazy"
         crossorigin="anonymous"
         async>
     </script>
 </div>
+
+<script>
+    function updateGiscusTheme() {
+        const isDark = document.documentElement.classList.contains('dark');
+        const theme = isDark ? 'dark' : 'light';
+        
+        const giscusFrame = document.querySelector('iframe.giscus-frame') as HTMLIFrameElement;
+        if (giscusFrame && giscusFrame.contentWindow) {
+            giscusFrame.contentWindow.postMessage(
+                { giscus: { setConfig: { theme } } },
+                'https://giscus.app'
+            );
+        }
+    }
+
+    // 초기 테마 설정
+    document.addEventListener('DOMContentLoaded', () => {
+        // Giscus가 로드될 때까지 잠시 대기
+        setTimeout(updateGiscusTheme, 1000);
+    });
+
+    // 다크모드 변경 감지
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                updateGiscusTheme();
+            }
+        });
+    });
+
+    // document.documentElement의 class 변경 감지
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+</script>
 
 <style>
     .giscus-container {
