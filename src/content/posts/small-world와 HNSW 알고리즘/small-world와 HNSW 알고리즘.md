@@ -4,7 +4,7 @@ published: 2025-07-24T23:30:00+09:00
 description: ''
 image: ''
 tags: []
-category: ''
+category: '알고리즘'
 draft: false 
 lang: ''
 ---
