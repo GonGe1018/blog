@@ -2,8 +2,8 @@
 title: small-world와 HNSW 알고리즘
 published: 2025-07-24T23:30:00+09:00
 description: ''
-image: ''
-tags: []
+image: './smallworld.png'
+tags: ['알고리즘', '그래프', 'RAG', '인공지능']
 category: '알고리즘'
 draft: false 
 lang: ''

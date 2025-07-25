@@ -2,7 +2,7 @@
 title: "컴퓨터가 미분하는 방법: 자동 미분(automatic differentiation)"
 published: 2025-07-25T01:00:00+09:00
 description: ''
-image: ''
+image: './computational-graph.png'
 tags: ['수학','인공신경망','인공지능']
 category: '인공지능>신경망'
 draft: false 
