@@ -7,6 +7,7 @@ tags: ['수학','인공신경망','인공지능']
 category: '인공지능>신경망'
 draft: false 
 lang: ''
+commentId: 'automatic-differentiation'
 ---
 
 최적화 분야에서는 미분이 필수적으로 사용된다.  

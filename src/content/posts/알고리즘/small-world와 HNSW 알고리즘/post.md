@@ -7,6 +7,7 @@ tags: []
 category: '알고리즘'
 draft: false 
 lang: ''
+commentId: 'small-world-and-hnsw'
 ---
 
 > 원본은 2025년 7월 16일에 작성되었습니다

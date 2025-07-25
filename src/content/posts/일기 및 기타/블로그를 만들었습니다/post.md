@@ -7,6 +7,7 @@ tags: []
 category: '일기 및 기타'
 draft: false 
 lang: 'ko'
+commentId: 'initial post'
 ---
 
 2025년 7월 24일 오전 1시 역사적인 순간을 맞이했습니다.<br>
