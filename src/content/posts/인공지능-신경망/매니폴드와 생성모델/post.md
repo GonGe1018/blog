@@ -1,6 +1,6 @@
 ---
 title: 매니폴드와 생성모델
-published: 2025-07-26T14:00:00+09:00
+published: 2025-07-27T04:00:00+09:00
 description: ''
 image: ''
 tags: ['인공지능', '수학']
